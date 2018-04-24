@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+<body>
+<div align="center"><h1 th:text="${title}">Default Title</h1></div>
+<div align="right"><a href="user/user-sign-in">Sign In</a></div>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${tracker}">
+    <table>
+        <tr class="form-group">
+            <td>
+                <label for="trackerName-field">Tracker Name</label>
+                <input class="form-control" th:field="*{trackerName}" id="trackerName-field" type="text" name="trackerName" />
+                <span th:errors="*{trackerName}" class="error"></span>
+            </td>
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                <label for="trackerItemName-field">Items to Track</label>
+                <input class="form-control" th:field="*{trackerItemName}" id="trackerItemName-field" type="text" name="trackerItemName" />
+                <span th:errors="*{trackerItemName}" class="error"></span>
+            </td>
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                <label for="categoryName-field">Categories</label>
+                <input class="form-control" th:field="*{categoryName}" id="categoryName-field" type="text" name="categoryName" />
+                <span th:errors="*{categoryName}" class="error"></span>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <input type="submit" value="Create Tracker" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

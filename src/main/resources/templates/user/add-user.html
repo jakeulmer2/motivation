@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+<body>
+<div align="center"><h1 th:text="${title}">Default Title</h1></div>
+<div align="right"><a href="user/user-sign-in">Sign In</a></div>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${user}">
+    <table>
+        <tr class="form-group">
+            <td>
+                <label for="name-field">User Name</label>
+                <input class="form-control" th:field="*{username}" id="name-field" type="text" name="name" />
+                <span th:errors="*{username}" class="error"></span>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label for="email-field">Email</label>
+                <input class="form-control" th:field="*{email}" id="email-field" type="email" name="email" />
+                <span th:errors="*{email}" class="error"></span>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label for="password-field">Password</label>
+                <input class="form-control" th:field="*{password}" id="password-field" type="password" name="password" />
+                <span th:errors="*{password}" class="error"></span>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label for="verify-field">Verify Password</label>
+                <input class="form-control" id="verify-field" type="password" name="verify" />
+                <span th:text="${passNoMatch}" class="error"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Add User" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
