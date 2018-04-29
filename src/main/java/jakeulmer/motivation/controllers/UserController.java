@@ -9,7 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
+
 
 @Controller
 @RequestMapping("user")
@@ -56,6 +56,7 @@ public class UserController {
         else {
             if (user.getPassword().equals(verify)) {
                 model.addAttribute("title", "Current Users");
+                /*Enter user hash here*/
                 userDao.save(user);
 
                 return "redirect:";

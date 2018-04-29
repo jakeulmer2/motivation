@@ -62,4 +62,19 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /*@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        return password != null ? password.equals(user.password) : user.password == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return password != null ? password.hashCode() : 0;
+    }*/
 }
