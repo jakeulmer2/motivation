@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+//@Table(name="user", uniqueConstraints={@UniqueConstraint(columnNames = "username")})
 public class User {
 
     @Id
@@ -39,9 +40,7 @@ public class User {
     }
 
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public void setUsername(String username) {
         this.username = username;

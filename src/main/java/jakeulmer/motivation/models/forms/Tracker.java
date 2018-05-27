@@ -23,7 +23,7 @@ public class Tracker {
 
     @OneToMany
     @JoinColumn(name = "trackerId")
-    private List<Category> catergory = new ArrayList<>();
+    private List<Category> category = new ArrayList<>();
 
     public Tracker(String trackerName) {
         this.trackerName = trackerName;
@@ -41,7 +41,7 @@ public class Tracker {
 
     public void setTrackerItem(List<TrackerItem> trackerItem) {this.trackerItem = trackerItem;}
 
-    public List<Category> getCatergory() {return catergory;}
+    public List<Category> getCategory() {return category;}
 
-    public void setCatergory(List<Category> catergory) {this.catergory = catergory;}
+    public void setCategory(List<Category> category) {this.category = category;}
 }

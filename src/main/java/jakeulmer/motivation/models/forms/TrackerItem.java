@@ -23,7 +23,7 @@ public class TrackerItem {
 
     public int getTrackerItemId() {return trackerItemId;}
 
-    public String getTrackerItmeName() {return trackerItemName;}
+    public String getTrackerItemName() {return trackerItemName;}
 
     public void setTrackerItemName(String trackerItemName) {this.trackerItemName = trackerItemName;}
 }

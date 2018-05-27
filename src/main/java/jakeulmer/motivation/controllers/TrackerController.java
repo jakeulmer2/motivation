@@ -47,6 +47,8 @@ public class TrackerController {
     public String displayCreateTrackerForm(Model model) {
         model.addAttribute("title", "Create a New Tracker");
         model.addAttribute(new Tracker());
+        model.addAttribute("trackerItem", trackerItemDao.findAll());
+        model.addAttribute("category", categoryDao.findAll());
         //model.addAttribute("tracker", trackerDao.findAll());
 
         return "tracker/create-tracker";

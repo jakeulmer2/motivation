@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 
 <head th:replace="fragments :: head"></head>
-<body>
-<h1 th:text="${title}">Default Title</h1>
+<body class="container">
+<h1 th:text="${title}" align="center">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<form method="post" style="max-width:600px;" th:object="${user}">
-    <table>
+<form method="post" style="max-width:600px;" th:object="${user}" align="center">
+    <table align="center">
         <tr class="form-group">
             <td>
                 <label for="name-field">User Name</label>

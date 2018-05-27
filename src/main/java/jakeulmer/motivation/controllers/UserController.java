@@ -2,6 +2,8 @@ package jakeulmer.motivation.controllers;
 
 import jakeulmer.motivation.models.data.UserDao;
 import jakeulmer.motivation.models.forms.User;
+import jakeulmer.motivation.models.data.TrackerDao;
+import jakeulmer.motivation.models.data.CheckListsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,12 @@ public class UserController {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private TrackerDao trackerDao;
+
+    @Autowired
+    private CheckListsDao checkListsDao;
 
     @RequestMapping(value = "")
     public String index(Model model) {
@@ -52,6 +60,15 @@ public class UserController {
             return "user/add-user";
 
         }
+
+        //if (userDao.findAll(user.getUsername())) {
+           // model.addAttribute("title", "Register a New Motivation Account");
+           //model.addAttribute("usernameInUse", "Username Already Exists.  Please Try Again.");
+            //return "user/add-user";
+
+        //}
+
+
 
         else {
             if (user.getPassword().equals(verify)) {
